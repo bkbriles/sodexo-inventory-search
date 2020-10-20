@@ -6,7 +6,7 @@ using namespace std;
 int main ()
 {
   // inventory dataset. stored in a 2d array. r,c. [i] will be item, [j] will be code
-  string a[142][2] = { {"cheese, mozz. shredded (comm) ","1019"},
+  string a[144][2] = { {"cheese, mozz. shredded (comm) ","1019"},
                  {"dressing balsamic fat free ","1400"},
                  {"dressing caesar lite ","1299"},
                  {"dressing italian low calorie ","1375"},
@@ -147,7 +147,9 @@ int main ()
                  {"re pack omelet ","DST1139"},
                  {"re pack sandwich ","DST1137"},
                  {"sausage crumble topping ","1009"},
-                 {"turkey sausage patty (sysco) ","1055"} };
+                 {"turkey sausage patty (sysco) ","1055"},
+{"re pack cinnamon rolls ","DST1154"},
+{"egg patty (comm) ","DST1153"} };
 
   // main loop
     // user input - search the dataset item keywords. convert to lowercase. 0exit
@@ -161,7 +163,7 @@ int main ()
       //getline (cin, keyword);
 
       // iterate through array[i]. if the keyword was found, print array[i][j]
-      for(int i = 0; i < 142; i++)
+      for(int i = 0; i < 144; i++)
       {
         size_t found = a[i][0].find(keyword);
         if (found!=string::npos)
