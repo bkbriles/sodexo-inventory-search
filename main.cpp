@@ -3,10 +3,12 @@
 #include <string>
 using namespace std;
 
+const int ARR_SIZE = 145;
+
 int main ()
 {
   // inventory dataset. stored in a 2d array. r,c. [i] will be item, [j] will be code
-  string a[144][2] = { {"cheese, mozz. shredded (comm) ","1019"},
+  string a[ARR_SIZE][2] = { {"cheese, mozz. shredded (comm) ","1019"},
                  {"dressing balsamic fat free ","1400"},
                  {"dressing caesar lite ","1299"},
                  {"dressing italian low calorie ","1375"},
@@ -149,12 +151,15 @@ int main ()
                  {"sausage crumble topping ","1009"},
                  {"turkey sausage patty (sysco) ","1055"},
 {"re pack cinnamon rolls ","DST1154"},
-{"egg patty (comm) ","DST1153"} };
+{"egg patty (comm) ","DST1153"},
+{"re pack taco ","DST1156"} };
 
   // main loop
     // user input - search the dataset item keywords. convert to lowercase. 0exit
     while(true)
     {
+      int counter = 0;
+        
       string keyword = "";
       cout << "\nSearch inventory: ";
       cin >> keyword;
@@ -163,7 +168,7 @@ int main ()
       //getline (cin, keyword);
 
       // iterate through array[i]. if the keyword was found, print array[i][j]
-      for(int i = 0; i < 144; i++)
+      for(int i = 0; i < ARR_SIZE; i++)
       {
         size_t found = a[i][0].find(keyword);
         if (found!=string::npos)
@@ -173,11 +178,19 @@ int main ()
             cout << a[i][j] << " ";
           }
           cout << "\n";
+          counter++;
         }
 
       }
-
+      
+      // Check for exit flag
+      if (keyword == "exit") break;
+        
       // if no match found, print no match
+      if (counter == 0)
+      {
+           cout << "\nNo matches found. Try searching for another word, or search for a part of a word.\n";
+      }
     }
 
   // debug
