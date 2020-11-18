@@ -3,7 +3,7 @@
 #include <string>
 using namespace std;
 
-const int ARR_SIZE = 145;
+const int ARR_SIZE = 144;
 
 int main ()
 {
@@ -150,9 +150,8 @@ int main ()
                  {"re pack sandwich ","DST1137"},
                  {"sausage crumble topping ","1009"},
                  {"turkey sausage patty (sysco) ","1055"},
-{"re pack cinnamon rolls ","DST1154"},
-{"egg patty (comm) ","DST1153"},
-{"re pack taco ","DST1156"} };
+                 {"re pack cinnamon rolls ","DST1154"},
+                 {"re pack taco ","DST1156"} };
 
   // main loop
     // user input - search the dataset item keywords. convert to lowercase. 0exit
