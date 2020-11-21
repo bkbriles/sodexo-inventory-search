@@ -155,12 +155,11 @@ function updateResult(query)
 
     arr.map(function(algo)
     {
-        query.split(" ").map(function (word)
+
+        if(algo.toLowerCase().indexOf(query.toLowerCase()) != -1)
         {
-            if(algo.toLowerCase().indexOf(word.toLowerCase()) != -1)
-            {
-                resultList.innerHTML += `<li class="list-group-item">${algo}</li>`;
-            }
-        })
+        resultList.innerHTML += `<li class="list-group-item">${algo}</li>`;
+        }
     })
+        
 }
